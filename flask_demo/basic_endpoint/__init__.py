@@ -15,7 +15,7 @@ def users():
 def user(user_id):
     if request.method == "GET":
         return {'user_id': user_id, 'message': 'Hello World!', 'method': request.method}
-    if request.method == "UPDATE":
+    if request.method == "PUT":
         return {'user_id': user_id, 'message': 'Hello World!', 'method': request.method}
     if request.method == "DELETE":
         return {'user_id': user_id, 'message': 'Hello World!', 'method': request.method}
