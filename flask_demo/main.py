@@ -1,5 +1,5 @@
 from flask import Flask
-from basic_endpoint import blueprint
+from flask_demo.basic_endpoint import blueprint
 
 app = Flask(__name__)
 app.register_blueprint(blueprint)
@@ -15,5 +15,3 @@ app.register_blueprint(blueprint)
 #         return { 'message': 'Hello World!', 'method': request.method }
 #     if request.method == "POST":
 #         return { 'message': 'Hello World!', 'method': request.method }
-
-
