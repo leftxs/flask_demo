@@ -11,7 +11,7 @@ def users():
         return {'message': 'Hello World!', 'method': request.method}
 
 
-@blueprint.route('/users/<int:user_id>', methods=['GET', 'POST'])
+@blueprint.route('/users/<int:user_id>', methods=['GET', 'PUT', 'DELETE'])
 def user(user_id):
     if request.method == "GET":
         return {'user_id': user_id, 'message': 'Hello World!', 'method': request.method}
