@@ -150,3 +150,6 @@ dmypy.json
 
 # VS Code
 .vscode/
+
+# Other files
+.DS_Store

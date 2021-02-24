@@ -1,10 +1,12 @@
 from flask import Flask
-from flask_demo.basic_endpoint import blueprint
-from flask_demo.docummented_endpoints import blueprint as v1
+from blueprints.basic_endpoint import blueprint as basic_endpoint
+from blueprints.documented_endpoints import blueprint as documented_endpoint
+from blueprints.jinja_example import blueprint as jinja_template_blueprint
 
 app = Flask(__name__)
-app.register_blueprint(v1)
-# app.register_blueprint(blueprint)
+app.register_blueprint(documented_endpoint)
+app.register_blueprint(jinja_template_blueprint)
+app.register_blueprint(basic_endpoint)
 
 # @app.route('/')
 # def base():
