@@ -47,11 +47,22 @@ The application has three different "modules" presented in detail in the [IC blo
 
 ### Basic and classic hello world
 
+Basic endpoints for demo purposes:
 
+* https://flask-ic.herokuapp.com/basic_api/hello_world | GET method
+* https://flask-ic.herokuapp.com/basic_api/entities | GET and POST methods
+* https://flask-ic.herokuapp.com/basic_api/entities/<entity_id> | GET, PUT and DELETE methods
 
 ### Jinja
 
+Example of a Jinja template render with dynamic content change based on query params **top** and **bottom**. This allows you to create you own **Business Cat** meme
 
+* https://flask-ic.herokuapp.com/jinja_template?top=cancel%20my%203%20o%27clock&bottom=the%20mouse%20is%20moving | GET method
 
 ### CRUD with swagger documentation
 
+Endpoints created based on the Flask-RESTPlus suggested structure and documentation. This will result on a endpoint that presents all the endpoints documentation within this this blueprint.
+
+#### Documentation
+
+https://flask-ic.herokuapp.com/documented_api/doc
