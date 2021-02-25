@@ -1,21 +1,26 @@
 from flask import Blueprint, request
 
-blueprint = Blueprint('api', __name__, url_prefix='/api/')
+blueprint = Blueprint('api', __name__, url_prefix='/basic_api')
 
 
-@blueprint.route('/users', methods=['GET', 'POST'])
+@blueprint.route('/hello_world', methods=['GET', 'POST'])
+def hello_world():
+    return {'message': 'Hello World!'}
+
+
+@blueprint.route('/entities', methods=['GET', 'POST'])
 def get_users():
     if request.method == "GET":
-        return {'message': 'Hello World!', 'method': request.method}
+        return {'message': 'This endpoint should return a list of entities', 'method': request.method}
     if request.method == "POST":
-        return {'message': 'Hello World!', 'method': request.method}
+        return {'message': 'This endpoint should create an entity', 'method': request.method}
 
 
-@blueprint.route('/users/<int:user_id>', methods=['GET', 'PUT', 'DELETE'])
+@blueprint.route('/entities/<int:user_id>', methods=['GET', 'PUT', 'DELETE'])
 def get_user(user_id):
     if request.method == "GET":
-        return {'user_id': user_id, 'message': 'Hello World!', 'method': request.method}
+        return {'message': 'This endpoint should return the entity {} details'.format(user_id), 'method': request.method}
     if request.method == "PUT":
-        return {'user_id': user_id, 'message': 'Hello World!', 'method': request.method}
+        return {'message': 'This endpoint should update the entity {}'.format(user_id), 'method': request.method}
     if request.method == "DELETE":
-        return {'user_id': user_id, 'message': 'Hello World!', 'method': request.method}
+        return {'message': 'This endpoint should delete the entity {}'.format(user_id), 'method': request.method}

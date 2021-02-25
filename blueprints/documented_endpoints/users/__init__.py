@@ -27,7 +27,7 @@ user_list_model = namespace.model('UserList', {
         description='List of users',
         as_list=True
     ),
-    'total records': fields.Integer(
+    'total_records': fields.Integer(
         description='Total number of users',
     ),
 })
@@ -38,51 +38,63 @@ user_model = namespace.clone('User', user_elem_model, {
     )
 })
 
+message_model = namespace.model('Message', {
+    'message': fields.Integer(
+        readonly=True,
+        description='Message detailing the request result'
+    )
+})
+
 
 @namespace.route('')
 class Users(Resource):
     '''Get all users list and create new users'''
 
-    @namespace.doc('get_users')
-    @namespace.marshal_with(user_list_model)
+    @namespace.marshal_list_with(user_list_model)
     def get(self):
         '''List with all the users'''
 
-        # Get all the users from the users variable and exclude the bio since the list requires
-        # less information to be sent to the client. If all the information from a user is needed,
-        # rely on GET /users/<user_id>
-        user_list = data.user_list
-
+        users_list = data.user_list()
         return {
-            'users': user_list,
-            'total_records': len(user_list)
+            'users': users_list,
+            'total_records': len(users_list)
         }
 
     @namespace.expect(user_model)
     @namespace.marshal_with(user_model)
     def post(self):
-        '''Fake method related to users creation'''
+        '''Create a new user'''
 
-        data.add_user(namespace.payload)
+        user = data.add_user(namespace.payload)
 
-        return {'message': 'Hello World!', 'method': request.method, 'sent_body': namespace.payload}
+        return user, 201
 
 
 @namespace.route('/<int:user_id>')
 class Users(Resource):
-    '''Comments'''
-    @namespace.doc('get_users')
+    '''Read, update and delete a specific user'''
+
+    @namespace.marshal_with(user_model)
     def get(self, user_id):
-        '''Fake method to get list with all the users'''
+        '''Get user information'''
 
-        return {'message': 'Hello World!', 'method': request.method}
+        user_info = data.get_user(user_id)
 
+        return user_info
+
+    @namespace.expect(user_model, validate=True)
+    @namespace.marshal_with(user_model)
     def put(self, user_id):
-        '''Fake method related to users creation'''
+        '''Update user information'''
 
-        return {'message': 'Hello World!', 'method': request.method, 'sent_body': namespace.payload}
+        updated_user = data.update_user(user_id, namespace.payload)
 
+        return updated_user
+
+    @namespace.marshal_with(message_model)
     def delete(self, user_id):
-        '''Fake method related to users creation'''
+        '''Delete a specific user'''
 
-        return {'message': 'Hello World!', 'method': request.method, 'sent_body': namespace.payload}
+        data.delete_user(user_id)
+
+        return {'message': 'User with id {} has been deleted.'.format(user_id)}, 200
