@@ -57,7 +57,7 @@ Basic endpoints for demo purposes:
 
 Example of a Jinja template render with dynamic content change based on query params **top** and **bottom**. This allows you to create you own **Business Cat** meme
 
-* https://flask-ic.herokuapp.com/jinja_template?top=cancel%20my%203%20o%27clock&bottom=the%20mouse%20is%20moving | GET method
+* https://flask-ic.herokuapp.com/jinja_template?top=cancel%20my%203%20o%27clock&bottom=the%20mouse%20is%20moving
 
 ### CRUD with swagger documentation
 
@@ -65,4 +65,4 @@ Endpoints created based on the Flask-RESTPlus suggested structure and documentat
 
 #### Documentation
 
-https://flask-ic.herokuapp.com/documented_api/doc
+* https://flask-ic.herokuapp.com/documented_api/doc
