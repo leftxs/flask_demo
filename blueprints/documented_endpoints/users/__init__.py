@@ -71,7 +71,7 @@ class Users(Resource):
 
 
 @namespace.route('/<int:user_id>')
-class Users(Resource):
+class User(Resource):
     '''Read, update and delete a specific user'''
 
     @namespace.marshal_with(user_model)
