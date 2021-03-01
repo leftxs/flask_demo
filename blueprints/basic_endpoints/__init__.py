@@ -23,21 +23,21 @@ def entities():
         }
 
 
-@blueprint.route('/entities/<int:user_id>', methods=['GET', 'PUT', 'DELETE'])
-def entity(user_id):
+@blueprint.route('/entities/<int:entity_id>', methods=['GET', 'PUT', 'DELETE'])
+def entity(entity_id):
     if request.method == "GET":
         return {
-            'message': 'This endpoint should return the entity {} details'.format(user_id),
+            'message': 'This endpoint should return the entity {} details'.format(entity_id),
             'method': request.method
         }
     if request.method == "PUT":
         return {
-            'message': 'This endpoint should update the entity {}'.format(user_id),
+            'message': 'This endpoint should update the entity {}'.format(entity_id),
             'method': request.method,
             'body': request.json
         }
     if request.method == "DELETE":
         return {
-            'message': 'This endpoint should delete the entity {}'.format(user_id),
+            'message': 'This endpoint should delete the entity {}'.format(entity_id),
             'method': request.method
         }
