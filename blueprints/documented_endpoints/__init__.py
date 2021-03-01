@@ -1,7 +1,7 @@
 from flask import Blueprint
 from flask_restplus import Api
-from blueprints.documented_endpoints.users import namespace as users_ns
-from blueprints.documented_endpoints.cats import namespace as cats_ns
+from blueprints.documented_endpoints.hello_world import namespace as hello_world_ns
+from blueprints.documented_endpoints.entities import namespace as entities_ns
 
 blueprint = Blueprint('documented_api', __name__, url_prefix='/documented_api')
 
@@ -14,5 +14,5 @@ api_extension = Api(
     doc='/doc'
 )
 
-api_extension.add_namespace(users_ns)
-api_extension.add_namespace(cats_ns)
+api_extension.add_namespace(hello_world_ns)
+api_extension.add_namespace(entities_ns)
