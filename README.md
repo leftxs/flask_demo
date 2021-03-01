@@ -1,6 +1,8 @@
 # flask_demo
 Flask demo project with auto generated Swagger documentation 
 
+![Flask Demo Screenshot](https://teste-martinho-page.s3-eu-west-1.amazonaws.com/share/flask_demo.png)
+
 ## Start Application Instructions
 
 Clone the repo to your local machine by running the command:
