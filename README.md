@@ -65,4 +65,4 @@ Example of a Jinja template render with dynamic content change based on query pa
 
 ### Docummented endpoints
 
-Endpoints created based on the Flask-RESTPlus suggested structure and documentation. All the endpoints previously created are created with a better structure inside the blueprints folder. You can check the generated documentation by refering to this link: https://flask-ic.herokuapp.com/documented_api/doc
+Endpoints created based on the Flask-RESTPlus suggested structure and documentation. All the endpoints previously created are presented with a better structure inside the **blueprints** folder. This achieved with the usage of [Flask-RESTPlus extension](https://flask-restplus.readthedocs.io/en/stable/) You can check the generated documentation by refering to this link: https://flask-ic.herokuapp.com/documented_api/doc
