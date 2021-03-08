@@ -27,17 +27,20 @@ def entities():
 def entity(entity_id):
     if request.method == "GET":
         return {
+            'id': entity_id,
             'message': 'This endpoint should return the entity {} details'.format(entity_id),
             'method': request.method
         }
     if request.method == "PUT":
         return {
+            'id': entity_id,
             'message': 'This endpoint should update the entity {}'.format(entity_id),
             'method': request.method,
             'body': request.json
         }
     if request.method == "DELETE":
         return {
+            'id': entity_id,
             'message': 'This endpoint should delete the entity {}'.format(entity_id),
             'method': request.method
         }
