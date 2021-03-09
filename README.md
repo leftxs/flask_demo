@@ -1,7 +1,7 @@
 # flask_demo
 Flask demo project with auto generated Swagger documentation.
 
-![Flask Demo Screen Recording](https://teste-martinho-page.s3-eu-west-1.amazonaws.com/share/documented_api.gif)
+![Flask Demo Screen Recording](https://www.imaginarycloud.com/blog/content/images/2021/03/documented_api--1--1.gif)
 
 ## Start Application Instructions
 
