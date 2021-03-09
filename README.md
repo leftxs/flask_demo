@@ -49,7 +49,7 @@ flask run
 
 ## Relevant endpoints
 
-The application has three different "modules" presented in detail in the [IC blog post]()
+The application has three different "modules" presented in detail in the [IC blog post](https://www.imaginarycloud.com/blog/flask-python/)
 
 ### Basic and classic hello world
 
