@@ -1,5 +1,5 @@
-# flask_demo
-Flask demo project with auto generated Swagger documentation.
+# flask_demo 🌶
+Flask demo project with auto generated Swagger documentation. Refer to the [IC Blog Post](https://www.imaginarycloud.com/blog/flask-python/) to have a detailed explanation of this demo.
 
 ![Flask Demo Screen Recording](https://www.imaginarycloud.com/blog/content/images/2021/03/documented_api--1--1.gif)
 
@@ -49,7 +49,7 @@ flask run
 
 ## Relevant endpoints
 
-The application has three different "modules" presented in detail in the [IC blog post](https://www.imaginarycloud.com/blog/flask-python/)
+The application has three different "modules" presented in detail in the [IC Blog Post](https://www.imaginarycloud.com/blog/flask-python/)
 
 ### Basic and classic hello world
 
