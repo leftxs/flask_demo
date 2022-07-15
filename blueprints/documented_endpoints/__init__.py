@@ -1,5 +1,5 @@
 from flask import Blueprint
-from flask_restplus import Api
+from flask_restx import Api
 from blueprints.documented_endpoints.hello_world import namespace as hello_world_ns
 from blueprints.documented_endpoints.entities import namespace as entities_ns
 from blueprints.documented_endpoints.jinja_template import namespace as jinja_template_ns

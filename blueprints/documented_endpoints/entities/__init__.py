@@ -1,5 +1,5 @@
 from flask import request
-from flask_restplus import Namespace, Resource, fields
+from flask_restx import Namespace, Resource, fields
 from http import HTTPStatus
 
 namespace = Namespace('entities', 'Entities fake endpoints')

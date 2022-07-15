@@ -1,0 +1,26 @@
+FROM python:3.10-bullseye as build
+
+WORKDIR /usr/src/app
+
+RUN apt-get -qq update && \
+    apt-get -qqy --no-install-recommends install binutils
+
+COPY requirements.txt requirements.txt
+
+RUN pip install --no-cache-dir --upgrade pip==22.1.2 && \
+    pip install --no-cache-dir -r requirements.txt &&  \
+    pip install --no-cache-dir pyinstaller==5.2
+
+COPY . .
+
+#RUN pyinstaller main.py
+
+#FROM gcr.io/distroless/python3:nonroot
+
+#WORKDIR /usr/src/app
+
+#COPY --from=build /usr/src/app/dist ./dist
+
+#CMD ["python", "app.py"]
+#ENTRYPOINT [ "dist/app/app"]
+ENTRYPOINT [ "bash"]
